@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --color: #622819;
+  --2: #f8613b;
+  --3: #FFD285;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f1eaeb;
+}
+
+.main_main-page {
+  width: 100%;
+}
+.main_main-page .swiper {
+  width: 100% !important;
+  overflow: visible !important;
+}
+.main_main-page .swiper .swiper-wrapper {
+  width: 100% !important;
+  overflow: visible !important;
+}
+.main_main-page .swiper .swiper-wrapper .swiper-slide {
+  width: 80% !important;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 0 !important;
+}
+.main_main-page .swiper .swiper-wrapper .swiper-slide .swiper-slide_img-prod {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateY(-80%);
+          transform: translateY(-80%);
+  z-index: 10 !important;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  width: 300px;
+}
+.main_main-page .swiper .swiper-wrapper .swiper-slide .swiper-slide_img-prod .back-part {
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+.main_main-page .swiper .swiper-wrapper .swiper-slide .swiper-slide_img-prod .first-part {
+  position: relative;
+  width: 85%;
+  aspect-ratio: 1/1;
+}
+.main_main-page .swiper .swiper-wrapper .swiper-slide .swiper-slide_card {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #f9f5f2;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+.main_main-page .swiper .swiper-wrapper .swiper-slide .swiper-slide_card .card_data-pizza {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+  width: 90%;
+}
+.main_main-page .swiper .swiper-wrapper .swiper-slide .swiper-slide_card .card_data-pizza .data-pizza_name {
+  font-size: 25px;
+  color: #622819;
+}
+.main_main-page .swiper .swiper-wrapper .swiper-slide .swiper-slide_card .card_data-pizza .data-pizza_assessment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 15px;
+  width: 60%;
+}
+.main_main-page .swiper .swiper-wrapper .swiper-slide .swiper-slide_card .card_data-pizza .data-pizza_assessment div {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+}
+.main_main-page .swiper .swiper-wrapper .swiper-slide .swiper-slide_card .card_data-pizza .data-pizza_assessment div img {
+  width: 100%;
+  height: 100%;
+}
+.main_main-page .swiper .swiper-wrapper .swiper-slide .swiper-slide_card .card_data-pizza .data-pizza_assessment .active {
+  background-color: white;
+}
+.main_main-page .swiper .swiper-wrapper .swiper-slide .swiper-slide_card .card_data-pizza .data-pizza_price {
+  font-size: 40px;
+  color: #622819;
+}
+.main_main-page .swiper .swiper-wrapper .swiper-slide .swiper-slide_card .card_data-pizza .data-pizza_choose-size {
+  width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 15px;
+}
+.main_main-page .swiper .swiper-wrapper .swiper-slide .swiper-slide_card .card_data-pizza .data-pizza_choose-size .size {
+  width: 20%;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: white;
+  font-size: 19px;
+  color: #622819;
+  border: none;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/resetStandartStyle.css">
+    <title>Order Manually</title>
+</head>
+
+<body>
+    <header>
+        <img src="" alt="cart">
+    </header>
+
+    <main>
+        <div class="main_main-page">
+            <div class="main_text-content">
+                <h2 class="text-content_title">Order Manually</h2>
+                <p class="text-content_subtitle">Washington park</p>
+                <p class="text-content_category">Pizza</p>
+            </div>
+
+            <div class="swiper">
+                <ul class="swiper-wrapper">
+                </ul>
+            </div>
+
+            <div class="main_pizza-page">
+            </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper(".swiper", {
+            effect: "creative",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 3,
+            spaceBetween: 20,
+            creativeEffect: {
+                prev: {
+                    translate: ["-70%", 0, -200],
+                    scale: 0.8,
+                },
+                next: {
+                    translate: ["70%", 0, -200],
+                    scale: 0.8,
+                },
+            },
+        });
+
+        swiper.slideTo(2);
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
