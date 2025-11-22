@@ -17,22 +17,107 @@
 
     <main>
         <div class="main_main-page">
-            <div class="main_text-content">
+            <div class="main-page_text-content">
                 <h2 class="text-content_title">Order Manually</h2>
                 <p class="text-content_subtitle">Washington park</p>
                 <p class="text-content_category">Pizza</p>
             </div>
 
-            <div class="swiper">
-                <ul class="swiper-wrapper">
-                </ul>
+            <div class="container-swiper">
+                <div class="constiner-swiper_pizza-card">
+
+                </div>
+
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide"><img src="imgs/hot-peperoni.webp"></div>
+                        <div class="swiper-slide"><img src="imgs/classic-chese.webp" /></div>
+                        <div class="swiper-slide"><img src="imgs/meat-pizza.webp"></div>
+                        <div class="swiper-slide"><img src="imgs/margarita.webp"></div>
+                    </div>
+                </div>
             </div>
 
             <div class="main_pizza-page">
             </div>
+
+        </div>
     </main>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
+        const productsList = [
+            { name: "Classic Cheese", assessment: 4, price: 10, prodImg: "imgs/classic-chese.webp" },
+            { name: "Margarita", assessment: 5, price: 13, prodImg: "imgs/margarita.webp" },
+            { name: "Hot Peperoni", assessment: 5, price: 15, prodImg: "imgs/hot-peperoni.webp" },
+            { name: "Meat pizza", assessment: 4, price: 13.5, prodImg: "imgs/meat-pizza.webp" },
+        ];
+        const pizzaCard = document.querySelector(".constiner-swiper_pizza-card");
+
+        function addHtmlActiveClass(activeSlide) {
+            const activeSlideImg = activeSlide.querySelector("img");
+            const src = activeSlideImg.getAttribute("src");
+
+            const dataPizza = productsList.filter((prod) => prod.prodImg === src);
+
+            const swiperSlide = productsList.map((data) => {
+                let pizzaSize = "M";
+                let correctPrice;
+
+                switch (pizzaSize) {
+                    case "M": correctPrice = data.price;
+                    case "S": correctPrice = data.price - 2;
+                    case "L": correctPrice = data.price + 2;
+                };
+
+                function generateStars(assessment) {
+                    const standartAssess = 5;
+                    const starsArray = [];
+
+                    for (let i = 0; i < assessment; i++) {
+                        starsArray.push('<div><img src="/imgs/star.svg"/></div>');
+                    };
+
+                    if (standartAssess > assessment) {
+                        const remainder = standartAssess - assessment;
+
+                        for (let i = 0; i < remainder; i++) {
+                            starsArray.push('<div><img src="/imgs/empty-star.svg"/></div>');
+                        };
+                    }
+
+                    return starsArray.join("");
+                };
+
+                pizzaCard.innerHTML = `
+                <div class="pizza-card_img-prod">
+                  <img src="/imgs/desk-for-pizza.webp" alt="Pizza desk" class="back-part" />
+                </div>
+
+                 <div class="pizza-card_data">
+                  <h3 class="data-pizza_name">${dataPizza[0].name}</h3>
+                  <div class="data-pizza_assessment">${generateStars(dataPizza[0].assessment)}</div>
+
+                  <p class="data-pizza_price">$${correctPrice}</p>
+
+                  <div class="data-pizza_choose-size">
+                    <button class="size"
+                    onclick="pizzaSize = event.target.textContent; event.target.classList.add("active");">S</button>
+
+                    <button class="size active"
+                    onclick="pizzaSize = event.target.textContent; event.target.classList.add("active");">M</button>
+
+                    <button class="size"
+                    onclick="pizzaSize = event.target.textContent; event.target.classList.add("active");">L</button>
+                   </div>
+                  </div>
+
+                <button class="pizza-card_add-to-cart"></button>`;
+            });
+        };
+
         const swiper = new Swiper(".swiper", {
             effect: "creative",
             grabCursor: true,
@@ -41,19 +126,27 @@
             spaceBetween: 20,
             creativeEffect: {
                 prev: {
-                    translate: ["-70%", 0, -200],
-                    scale: 0.8,
+                    translate: ["-95%", 100, 0],
                 },
                 next: {
-                    translate: ["70%", 0, -200],
-                    scale: 0.8,
+                    translate: ["95%", 100, 0],
                 },
             },
+            on: {
+                init() {
+                    this.slideTo(1, 0);
+                    const activeSlide = this.slides[this.activeIndex];
+                    addHtmlActiveClass(activeSlide);
+                },
+
+            }
         });
 
-        swiper.slideTo(2);
+        swiper.on('slideChange', () => {
+            const activeSlide = swiper.slides[swiper.activeIndex];
+            addHtmlActiveClass(activeSlide);
+        })
     </script>
-    <script src="script.js"></script>
 </body>
 
 </html>
