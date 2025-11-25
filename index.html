@@ -25,7 +25,11 @@
             <p class="text-content_category">Pizza</p>
           </div>
 
-          <img src="imgs/cart-for-header.png" alt="cart icon" class="top-part_cart">
+          <img
+            src="imgs/cart-for-header.png"
+            alt="cart icon"
+            class="top-part_cart"
+          />
         </div>
 
         <div class="container-swiper">
@@ -44,8 +48,6 @@
             </div>
           </div>
         </div>
-
-        <div class="main_pizza-page"></div>
       </div>
     </main>
 
@@ -81,13 +83,16 @@
 
       const pizzaCard = document.querySelector(".constiner-swiper_pizza-card");
 
-      function addHtmlActiveClass(activeSlide) {
+      function filterData(activeSlide) {
         const activeSlideImg = activeSlide.querySelector("img");
         const src = activeSlideImg.getAttribute("src");
 
-        const dataPizza = productsList.filter(
-          (prod) => prod.prodImg === src
-        )[0];
+        const dataPizza = productsList.find((prod) => prod.prodImg === src);
+        return dataPizza;
+      }
+
+      function addHtmlActiveClass(activeSlide) {
+        const dataPizza = filterData(activeSlide);
         let pizzaSize = "M";
 
         function generateStars(assessment) {
@@ -126,11 +131,11 @@
       <img src="imgs/desk-for-pizza.webp" alt="Pizza desk" class="back-part" />
     </div>
     <div class="pizza-card_data">
-      <h3 class="data-pizza_name hidden">${dataPizza.name}</h3>
+      <h3 class="data-pizza_name">${dataPizza.name}</h3>
       <div class="data-pizza_assessment">${generateStars(
         dataPizza.assessment
       )}</div>
-      <p class="data-pizza_price hidden">$${getCorrectPrice()}</p>
+      <p class="data-pizza_price">$${getCorrectPrice()}</p>
       <div class="data-pizza_choose-size">
         <button class="size">S</button>
         <button class="size active">M</button>
@@ -161,6 +166,8 @@
         const nameProd = document.querySelector(".data-pizza_name");
         const priceProd = document.querySelector(".data-pizza_price");
 
+        if (!nameProd || !priceProd) return;
+
         nameProd.classList.remove("hidden");
         priceProd.classList.remove("hidden");
       }
@@ -187,10 +194,53 @@
       swiper.on("slideChange", () => {
         const activeSlide = swiper.slides[swiper.activeIndex];
         addHtmlActiveClass(activeSlide);
-        showHtmlEl();
       });
 
-      document.addEventListener("DOMContentLoaded", showHtmlEl());
+      const swiperSlide = document.querySelectorAll(".swiper-slide");
+      swiperSlide.forEach((slide) => {
+        slide.addEventListener("click", () => {
+          const activeSlide = swiper.slides[swiper.activeIndex];
+          addHtmlForProdPage(activeSlide);
+        });
+      });
+
+      function addHtmlForProdPage(activeSlide) {
+        const dataPizza = filterData(activeSlide);
+        const topPart = document.querySelector(".main-page_top-part");
+        const imgPros = document.querySelector(".pizza-card_img-prod");
+        const nameProd = document.querySelector(".data-pizza_name");
+        const blockAssessment = document.querySelector(".data-pizza_assessment");
+
+        const htmlForCard = `
+         <div>
+          <img src="imgs/left-arrow.svg" alt="Back to main page" class="top-part_btn-nav"/>
+          <h2 class="top-part_pizza-name">${dataPizza.name}</h2>
+         </div>
+        `;
+
+        const HTMLtoppingForPizza = `
+        <div class="pizza-card_topping-for-pizza">
+          <p class="topping-for-pizza_hint-message">Topping (Must be 2)</p>
+          <ul class="topping-for-pizza_topping-list>
+            <div class="topping-list_topping">
+              <img src="imgs/tomato.svg" alt="Tomato"/>
+            </div>
+            
+            <div class="topping-list_topping">
+              <img src="imgs/mushroom.svg" alt="Mushroom"/>
+            </div>
+
+            <div class="topping-list_topping">
+              <img src="imgs/cucumber.svg" alt="Cucumber"/>
+            </div>
+
+            <div class="topping-list_topping">
+              <img src="imgs/bow.svg" alt="Bow"/>
+            </div>
+          </ul>
+        </div>
+        `;
+      }
     </script>
   </body>
 </html>

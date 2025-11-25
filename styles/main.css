@@ -99,7 +99,7 @@ main .main_main-page .container-swiper {
           justify-content: center;
   position: relative;
   width: 100%;
-  height: 360px;
+  height: 420px;
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card {
   width: 200px !important;
@@ -122,7 +122,7 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card {
           flex-direction: column;
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card .pizza-card_img-prod {
-  width: 230px;
+  width: 260px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -133,7 +133,9 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card .pizza-card_
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 35px;
+  -webkit-filter: drop-shadow(0 25px 20px rgba(98, 40, 25, 0.45));
+          filter: drop-shadow(0 25px 20px rgba(98, 40, 25, 0.45));
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card .pizza-card_img-prod .back-part {
   width: 90%;
@@ -142,7 +144,8 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card .pizza-card_
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card .pizza-card_data {
   width: 100%;
-  padding-bottom: 50px;
+  padding-top: 10px;
+  padding-bottom: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -163,15 +166,17 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card .pizza-card_
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card .pizza-card_data .data-pizza_name,
 main .main_main-page .container-swiper .constiner-swiper_pizza-card .pizza-card_data .data-pizza_price {
-  -webkit-transition: opacity 0.6s, top 0.6s;
-  transition: opacity 0.6s, top 0.6s;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.2s;
+  transition: opacity 0.3s, -webkit-transform 0.2s;
+  transition: opacity 0.3s, transform 0.2s;
+  transition: opacity 0.3s, transform 0.2s, -webkit-transform 0.2s;
   opacity: 1;
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card .pizza-card_data .data-pizza_name.hidden,
 main .main_main-page .container-swiper .constiner-swiper_pizza-card .pizza-card_data .data-pizza_price.hidden {
-  position: relative;
-  top: -50px;
   opacity: 0;
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card .pizza-card_data .data-pizza_name {
   font-size: 20px;
@@ -277,9 +282,12 @@ main .main_main-page .container-swiper .swiper {
 }
 main .main_main-page .container-swiper .swiper .swiper-wrapper {
   margin: 0 auto !important;
+  position: relative;
+  -webkit-transform: translateX(19.3%) translateY(-5%) !important;
+          transform: translateX(19.3%) translateY(-5%) !important;
 }
 main .main_main-page .container-swiper .swiper .swiper-wrapper .swiper-slide {
-  width: 100px !important;
+  width: 120px !important;
   aspect-ratio: 1/1;
   opacity: 0 !important;
   margin-right: 0 !important;
@@ -289,7 +297,7 @@ main .main_main-page .container-swiper .swiper .swiper-wrapper .swiper-slide img
   height: 100%;
 }
 main .main_main-page .container-swiper .swiper .swiper-wrapper .swiper-slide.swiper-slide-active {
-  width: 180px !important;
+  width: 205px !important;
   aspect-ratio: 1/1;
   opacity: 1 !important;
 }
