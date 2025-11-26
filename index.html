@@ -219,12 +219,14 @@
       imgProd.innerHTML += `<img src="${dataPizza.prodImg}" class="pizza-photo" alt="Pizza photo" />`;
 
       const HTMLtoppingForPizza = `
+        <div class="data_topping-for-pizza">
           <p class="topping-for-pizza_hint-message">Topping (Must be 2)</p>
-          <ul class="topping-for-pizza_topping-list>
+
+          <ul class="topping-for-pizza_topping-list">
             <li class="topping-list_topping">
               <img src="imgs/tomato.svg" alt="Tomato"/>
             </li>
-            
+
             <li class="topping-list_topping">
               <img src="imgs/mushroom.svg" alt="Mushroom"/>
             </li>
@@ -237,16 +239,17 @@
               <img src="imgs/bow.svg" alt="Bow"/>
             </li>
           </ul>
+        </div>
         `;
-
-      const toppings = document.createElement('div');
-      toppings.class = 'pizza-card_topping-for-pizza';
-      toppings.innerHTML = HTMLtoppingForPizza;
-
+        
       const pizzaCardData = pizzaCard.querySelector('.pizza-card_data');
-
       pizzaCard.classList.add("version-for-pageProd");
-      pizzaCardData.appendChild(toppings);
+      pizzaCardData.innerHTML += HTMLtoppingForPizza;
+
+      const btn_nav = document.querySelector('.top-part_btn-nav');
+      btn_nav.addEventListener('click', () => {
+        pizzaCard.classList.remove("version-for-pageProd");
+      });
     };
 
   </script>

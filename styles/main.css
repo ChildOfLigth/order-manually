@@ -119,7 +119,7 @@ main .main_main-page .main-page_top-part.change-for-prodPage .top-part_hidden-bl
   height: 30px;
 }
 main .main_main-page .main-page_top-part.change-for-prodPage .top-part_hidden-block .top-part_pizza-name {
-  font-size: 22px;
+  font-size: 25px;
   color: #622819;
 }
 main .main_main-page .container-swiper {
@@ -137,7 +137,7 @@ main .main_main-page .container-swiper {
   height: 420px;
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card {
-  width: 200px !important;
+  width: 200px;
   position: absolute;
   top: 0;
   z-index: 1;
@@ -243,7 +243,7 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card .pizza-card_
   display: none;
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card .pizza-card_data .data-pizza_price {
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 600;
   color: #622819;
   margin-bottom: 15px;
@@ -285,6 +285,9 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card .pizza-card_
   -webkit-box-shadow: 0 7px 20px rgba(128, 128, 128, 0.1);
           box-shadow: 0 7px 20px rgba(128, 128, 128, 0.1);
 }
+main .main_main-page .container-swiper .constiner-swiper_pizza-card .pizza-card_data .data_topping-for-pizza {
+  display: none;
+}
 main .main_main-page .container-swiper .constiner-swiper_pizza-card .pizza-card_add-to-cart {
   width: 45px;
   height: 45px;
@@ -314,7 +317,12 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card .pizza-card_
           filter: invert(1);
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd {
-  width: 85%;
+  width: 100%;
+  padding: 30px 0;
+  background-color: #f9f5f2;
+}
+main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_img-prod {
+  width: 90%;
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_img-prod .back-part {
   position: absolute;
@@ -326,12 +334,71 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_data {
   width: 100%;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background: none;
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_data .data-pizza_name {
   display: none;
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_data .data-pizza_assessment {
   display: none;
+}
+main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_data .data_topping-for-pizza {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_data .data_topping-for-pizza .topping-for-pizza_hint-message {
+  font-size: 16px;
+  font-weight: 400;
+  color: #622819;
+}
+main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_data .data_topping-for-pizza .topping-for-pizza_topping-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+  list-style: none;
+}
+main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_data .data_topping-for-pizza .topping-for-pizza_topping-list .topping-list_topping {
+  width: 50px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #ffd285;
+  border-radius: 50%;
+}
+main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_data .data_topping-for-pizza .topping-for-pizza_topping-list .topping-list_topping img {
+  width: 85%;
+  aspect-ratio: 1/1;
+  -webkit-filter: drop-shadow(0 7px 20px rgba(128, 128, 128, 0.2));
+          filter: drop-shadow(0 7px 20px rgba(128, 128, 128, 0.2));
 }
 main .main_main-page .container-swiper .swiper {
   width: 100% !important;

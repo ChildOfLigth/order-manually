@@ -104,7 +104,7 @@ main {
           }
 
           .top-part_pizza-name {
-            font-size: 22px;
+            font-size: 25px;
             color: #622819;
           }
         }
@@ -120,7 +120,7 @@ main {
       height: 420px;
 
       .constiner-swiper_pizza-card {
-        width: 200px !important;
+        width: 200px;
         position: absolute;
         top: 0;
         z-index: 1;
@@ -196,7 +196,7 @@ main {
           }
 
           .data-pizza_price {
-            font-size: 25px;
+            font-size: 30px;
             font-weight: 600;
             color: #622819;
             margin-bottom: 15px;
@@ -227,6 +227,10 @@ main {
               }
             }
           }
+
+          .data_topping-for-pizza {
+            display: none;
+          }
         }
 
         .pizza-card_add-to-cart {
@@ -251,9 +255,12 @@ main {
         }
 
         &.version-for-pageProd {
-          width: 85%;
+          width: 100%;
+          padding: 30px 0;
+          background-color: #f9f5f2;
 
           .pizza-card_img-prod {
+            width: 90%;
             .back-part {
               position: absolute;
             }
@@ -267,13 +274,55 @@ main {
 
           .pizza-card_data {
             width: 100%;
-            
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            background: none;
+
             .data-pizza_name {
               display: none;
             }
 
             .data-pizza_assessment {
               display: none;
+            }
+
+            .data_topping-for-pizza {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              gap: 25px;
+              margin-top: 40px;
+
+              .topping-for-pizza_hint-message {
+                font-size: 16px;
+                font-weight: 400;
+                color: #622819;
+              }
+
+              .topping-for-pizza_topping-list {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                list-style: none;
+
+                .topping-list_topping {
+                  width: 50px;
+                  height: 50px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  background-color: #ffd285;
+                  border-radius: 50%;
+
+                  img {
+                    width: 85%;
+                    aspect-ratio: 1 / 1;
+                    filter: drop-shadow(0 7px 20px rgba(128, 128, 128, 0.2));
+                  }
+                }
+              }
             }
           }
         }
