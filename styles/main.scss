@@ -40,6 +40,10 @@ main {
         gap: 10px;
         margin-bottom: 40px;
 
+        &.hidden {
+          display: none;
+        }
+
         .text-content_title {
           font-size: 30px;
           font-weight: 500;
@@ -76,6 +80,35 @@ main {
         width: 30px;
         height: 30px;
       }
+
+      .top-part_hidden-block {
+        display: none;
+      }
+
+      &.change-for-prodPage {
+        flex-direction: row-reverse;
+
+        .top-part_text-content {
+          display: none;
+        }
+
+        .top-part_hidden-block {
+          width: 75%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .top-part_btn-nav {
+            width: 30px;
+            height: 30px;
+          }
+
+          .top-part_pizza-name {
+            font-size: 22px;
+            color: #622819;
+          }
+        }
+      }
     }
 
     .container-swiper {
@@ -96,6 +129,7 @@ main {
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        transition: all 0.5s;
 
         .pizza-card_img-prod {
           width: 260px;
@@ -155,6 +189,10 @@ main {
               width: 13px;
               height: 13px;
             }
+
+            &.hidden {
+              display: none;
+            }
           }
 
           .data-pizza_price {
@@ -211,6 +249,34 @@ main {
             filter: invert(1);
           }
         }
+
+        &.version-for-pageProd {
+          width: 85%;
+
+          .pizza-card_img-prod {
+            .back-part {
+              position: absolute;
+            }
+
+            .pizza-photo {
+              width: 80%;
+              position: relative;
+              z-index: 10;
+            }
+          }
+
+          .pizza-card_data {
+            width: 100%;
+            
+            .data-pizza_name {
+              display: none;
+            }
+
+            .data-pizza_assessment {
+              display: none;
+            }
+          }
+        }
       }
 
       .swiper {
@@ -219,6 +285,10 @@ main {
         position: relative;
         top: -20%;
         z-index: 5;
+
+        &.hidden {
+          display: none;
+        }
 
         .swiper-wrapper {
           margin: 0 auto !important;
