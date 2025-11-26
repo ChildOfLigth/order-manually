@@ -76,6 +76,10 @@ main {
         }
       }
 
+      .top-part_hidden-block {
+        display: none;
+      }
+
       .top-part_cart {
         width: 30px;
         height: 30px;
@@ -86,7 +90,6 @@ main {
       }
 
       &.change-for-prodPage {
-        flex-direction: row-reverse;
 
         .top-part_text-content {
           display: none;
@@ -98,12 +101,12 @@ main {
           align-items: center;
           justify-content: space-between;
 
-          .top-part_btn-nav {
+          .hidden-block_btn-nav {
             width: 30px;
             height: 30px;
           }
 
-          .top-part_pizza-name {
+          .hidden-block_pizza-name {
             font-size: 25px;
             color: #622819;
           }
@@ -306,10 +309,11 @@ main {
                 justify-content: center;
                 gap: 20px;
                 list-style: none;
+                width: 80%;
 
                 .topping-list_topping {
-                  width: 50px;
-                  height: 50px;
+                  width: 20%;
+                  aspect-ratio: 1 / 1;
                   display: flex;
                   align-items: center;
                   justify-content: center;
@@ -324,6 +328,11 @@ main {
                 }
               }
             }
+          }
+
+          .pizza-card_add-to-cart {
+            position: absolute;
+            top: 90%;
           }
         }
       }

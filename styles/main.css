@@ -86,18 +86,15 @@ main .main_main-page .main-page_top-part .top-part_text-content .text-content_ca
   background-color: #ffd285;
   border-radius: 40px;
 }
+main .main_main-page .main-page_top-part .top-part_hidden-block {
+  display: none;
+}
 main .main_main-page .main-page_top-part .top-part_cart {
   width: 30px;
   height: 30px;
 }
 main .main_main-page .main-page_top-part .top-part_hidden-block {
   display: none;
-}
-main .main_main-page .main-page_top-part.change-for-prodPage {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
 }
 main .main_main-page .main-page_top-part.change-for-prodPage .top-part_text-content {
   display: none;
@@ -114,11 +111,11 @@ main .main_main-page .main-page_top-part.change-for-prodPage .top-part_hidden-bl
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-main .main_main-page .main-page_top-part.change-for-prodPage .top-part_hidden-block .top-part_btn-nav {
+main .main_main-page .main-page_top-part.change-for-prodPage .top-part_hidden-block .hidden-block_btn-nav {
   width: 30px;
   height: 30px;
 }
-main .main_main-page .main-page_top-part.change-for-prodPage .top-part_hidden-block .top-part_pizza-name {
+main .main_main-page .main-page_top-part.change-for-prodPage .top-part_hidden-block .hidden-block_pizza-name {
   font-size: 25px;
   color: #622819;
 }
@@ -378,10 +375,11 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-
           justify-content: center;
   gap: 20px;
   list-style: none;
+  width: 80%;
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_data .data_topping-for-pizza .topping-for-pizza_topping-list .topping-list_topping {
-  width: 50px;
-  height: 50px;
+  width: 20%;
+  aspect-ratio: 1/1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -399,6 +397,10 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-
   aspect-ratio: 1/1;
   -webkit-filter: drop-shadow(0 7px 20px rgba(128, 128, 128, 0.2));
           filter: drop-shadow(0 7px 20px rgba(128, 128, 128, 0.2));
+}
+main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_add-to-cart {
+  position: absolute;
+  top: 90%;
 }
 main .main_main-page .container-swiper .swiper {
   width: 100% !important;

@@ -24,6 +24,11 @@
           <p class="text-content_category">Pizza</p>
         </div>
 
+        <div class="top-part_hidden-block">
+          <img src="imgs/left-arrow.svg" alt="Back to main page" class="hidden-block_btn-nav" />
+          <h2 class="hidden-block_pizza-name"></h2>
+        </div>
+
         <img src="imgs/cart-for-header.png" alt="cart icon" class="top-part_cart" />
       </div>
 
@@ -207,13 +212,8 @@
       const swiper = document.querySelector('.swiper');
       swiper.classList.add('hidden');
 
-      const htmlForTopPartCard = `
-         <div class="top-part_hidden-block">
-          <img src="imgs/left-arrow.svg" alt="Back to main page" class="top-part_btn-nav"/>
-          <h2 class="top-part_pizza-name">${dataPizza.name}</h2>
-         </div>
-        `;
-      topPart.innerHTML += htmlForTopPartCard;
+      const titleHiddenBlock = document.querySelector('.hidden-block_pizza-name');
+      titleHiddenBlock.textContent = dataPizza.name;
       topPart.classList.add("change-for-prodPage");
 
       imgProd.innerHTML += `<img src="${dataPizza.prodImg}" class="pizza-photo" alt="Pizza photo" />`;
@@ -241,7 +241,7 @@
           </ul>
         </div>
         `;
-        
+
       const pizzaCardData = pizzaCard.querySelector('.pizza-card_data');
       pizzaCard.classList.add("version-for-pageProd");
       pizzaCardData.innerHTML += HTMLtoppingForPizza;
@@ -249,6 +249,10 @@
       const btn_nav = document.querySelector('.top-part_btn-nav');
       btn_nav.addEventListener('click', () => {
         pizzaCard.classList.remove("version-for-pageProd");
+        swiper.classList.remove("hidden");
+
+        const pizzaImg = imgProd.querySelector(".pizza-photo");
+        imgProd.removeChild(pizzaImg);
       });
     };
 
