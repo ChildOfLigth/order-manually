@@ -5,6 +5,10 @@ body {
   display: block;
   overflow-x: hidden;
 }
+body.style-for-prodPage {
+  background: -webkit-gradient(linear, left top, left bottom, from(#f9f5f2), to(#f1eaeb));
+  background: linear-gradient(#f9f5f2, #f1eaeb);
+}
 
 header {
   width: 85%;
@@ -357,6 +361,7 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-
           justify-content: center;
   gap: 25px;
   margin-top: 40px;
+  width: 80%;
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_data .data_topping-for-pizza .topping-for-pizza_hint-message {
   font-size: 16px;
@@ -394,12 +399,18 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-
   position: relative;
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_data .data_topping-for-pizza .topping-for-pizza_topping-list .topping-list_topping .topping_topping-img {
-  position: relative;
+  position: absolute;
+  cursor: -webkit-grab;
+  cursor: grab;
   inset: 0;
   width: 85%;
   aspect-ratio: 1/1;
   -webkit-filter: drop-shadow(0 7px 20px rgba(128, 128, 128, 0.2));
           filter: drop-shadow(0 7px 20px rgba(128, 128, 128, 0.2));
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_add-to-cart {
   position: absolute;

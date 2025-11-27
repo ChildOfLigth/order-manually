@@ -2,7 +2,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color:#f1eaeb;
+  background-color: #f1eaeb;
   display: block;
   overflow-x: hidden;
 
@@ -95,7 +95,6 @@ main {
       }
 
       &.change-for-prodPage {
-
         .top-part_text-content {
           display: none;
         }
@@ -301,6 +300,7 @@ main {
               justify-content: center;
               gap: 25px;
               margin-top: 40px;
+              width: 80%;
 
               .topping-for-pizza_hint-message {
                 font-size: 16px;
@@ -327,11 +327,13 @@ main {
                   position: relative;
 
                   .topping_topping-img {
-                    position: relative;
+                    position: absolute;
+                    cursor: grab;
                     inset: 0;
                     width: 85%;
                     aspect-ratio: 1 / 1;
                     filter: drop-shadow(0 7px 20px rgba(128, 128, 128, 0.2));
+                    user-select: none;
                   }
                 }
               }
