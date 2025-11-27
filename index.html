@@ -83,6 +83,23 @@
 
     const pizzaCard = document.querySelector(".constiner-swiper_pizza-card");
 
+    function getCorrectPrice(pizzaSize, price) {
+      let correctPrice;
+
+      switch (pizzaSize) {
+        case "M":
+          correctPrice = price;
+          break;
+        case "S":
+          correctPrice = price - 2;
+          break;
+        case "L":
+          correctPrice = price + 2;
+          break;
+      }
+      return correctPrice;
+    }
+
     function filterData(activeSlide) {
       const activeSlideImg = activeSlide.querySelector("img");
       const src = activeSlideImg.getAttribute("src");
@@ -110,22 +127,6 @@
         return starsArray.join("");
       }
 
-      function getCorrectPrice() {
-        let correctPrice;
-        switch (pizzaSize) {
-          case "M":
-            correctPrice = dataPizza.price;
-            break;
-          case "S":
-            correctPrice = dataPizza.price - 2;
-            break;
-          case "L":
-            correctPrice = dataPizza.price + 2;
-            break;
-        }
-        return correctPrice;
-      }
-
       pizzaCard.innerHTML = `
     <div class="pizza-card_img-prod">
       <img src="imgs/desk-for-pizza.webp" alt="Pizza desk" class="back-part" />
@@ -135,7 +136,7 @@
       <div class="data-pizza_assessment">${generateStars(
         dataPizza.assessment
       )}</div>
-      <p class="data-pizza_price">$${getCorrectPrice()}</p>
+      <p class="data-pizza_price">$${getCorrectPrice(pizzaSize, dataPizza.price)}</p>
       <div class="data-pizza_choose-size">
         <button class="size">S</button>
         <button class="size active">M</button>
@@ -153,7 +154,7 @@
           pizzaSize = e.target.textContent;
           const priceElem = pizzaCard.querySelector(".data-pizza_price");
 
-          priceElem.textContent = `$${getCorrectPrice()}`;
+          priceElem.textContent = `$${getCorrectPrice(pizzaSize, dataPizza.price)}`;
           changeSize.forEach((btn) => btn.classList.remove("active"));
           e.target.classList.add("active");
 
@@ -224,36 +225,64 @@
 
           <ul class="topping-for-pizza_topping-list">
             <li class="topping-list_topping">
-              <img src="imgs/tomato.svg" alt="Tomato"/>
+              <img src="imgs/tomato.svg" alt="Tomato" class="topping_topping-img"/>
             </li>
 
             <li class="topping-list_topping">
-              <img src="imgs/mushroom.svg" alt="Mushroom"/>
+              <img src="imgs/mushroom.svg" alt="Mushroom" class="topping_topping-img"/>
             </li>
 
             <li class="topping-list_topping">
-              <img src="imgs/cucumber.svg" alt="Cucumber"/>
+              <img src="imgs/cucumber.svg" alt="Cucumber" class="topping_topping-img"/>
             </li>
 
             <li class="topping-list_topping">
-              <img src="imgs/bow.svg" alt="Bow"/>
+              <img src="imgs/bow.svg" alt="Bow" class="topping_topping-img"/>
             </li>
           </ul>
         </div>
         `;
 
+      const toppingDiv = document.createElement("div");
+      
+
       const pizzaCardData = pizzaCard.querySelector('.pizza-card_data');
       pizzaCard.classList.add("version-for-pageProd");
-      pizzaCardData.innerHTML += HTMLtoppingForPizza;
+      pizzaCardData.appendChild(HTMLtoppingForPizza);
 
-      const btn_nav = document.querySelector('.top-part_btn-nav');
+      const btn_nav = document.querySelector('.hidden-block_btn-nav');
       btn_nav.addEventListener('click', () => {
         pizzaCard.classList.remove("version-for-pageProd");
         swiper.classList.remove("hidden");
 
         const pizzaImg = imgProd.querySelector(".pizza-photo");
         imgProd.removeChild(pizzaImg);
+
+        topPart.classList.remove("change-for-prodPage");
+
+        document.body.classList.add("style-for-prodPage");
       });
+
+      const changeSize = pizzaCard.querySelectorAll(".size");
+      changeSize.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          pizzaSize = e.target.textContent;
+          const priceElem = pizzaCard.querySelector(".data-pizza_price");
+
+          priceElem.textContent = `$${getCorrectPrice(pizzaSize, dataPizza.price)}`;
+          changeSize.forEach((btn) => btn.classList.remove("active"));
+          e.target.classList.add("active");
+
+          showHtmlEl();
+        });
+      });
+
+      // const toppingsList = document.querySelector(".topping-list_topping");
+      // toppingsList.addEventListener("mousemove", (e) => {
+      //   if(e.target.class == "topping_topping-img") {
+
+      //   }
+      // })
     };
 
   </script>

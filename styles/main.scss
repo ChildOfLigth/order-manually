@@ -2,8 +2,13 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #f1eaeb;
+  background-color:#f1eaeb;
+  display: block;
   overflow-x: hidden;
+
+  &.style-for-prodPage {
+    background: linear-gradient(#f9f5f2, #f1eaeb);
+  }
 }
 
 header {
@@ -96,7 +101,6 @@ main {
         }
 
         .top-part_hidden-block {
-          width: 75%;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -158,7 +162,7 @@ main {
           align-items: center;
           justify-content: center;
           flex-direction: column;
-          background: linear-gradient(#f1eaeb 10%, #f9f5f2 90%);
+          background: linear-gradient(#f1eaeb 5%, #f9f5f2 90%);
           border-bottom-left-radius: 50%;
           border-bottom-right-radius: 50%;
 
@@ -264,6 +268,7 @@ main {
 
           .pizza-card_img-prod {
             width: 90%;
+
             .back-part {
               position: absolute;
             }
@@ -319,8 +324,11 @@ main {
                   justify-content: center;
                   background-color: #ffd285;
                   border-radius: 50%;
+                  position: relative;
 
-                  img {
+                  .topping_topping-img {
+                    position: relative;
+                    inset: 0;
                     width: 85%;
                     aspect-ratio: 1 / 1;
                     filter: drop-shadow(0 7px 20px rgba(128, 128, 128, 0.2));
@@ -332,7 +340,7 @@ main {
 
           .pizza-card_add-to-cart {
             position: absolute;
-            top: 90%;
+            top: 95%;
           }
         }
       }
