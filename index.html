@@ -240,20 +240,20 @@
           <p class="topping-for-pizza_hint-message">Topping (Must be 2)</p>
 
           <ul class="topping-for-pizza_topping-list">
-            <li class="topping-list_topping">
-              <img src="imgs/tomato.svg" alt="Tomato" class="topping_topping-img"/>
+            <li class="topping-list_topping" >
+              <img src="imgs/tomato.svg" alt="Tomato" class="topping_topping-img" data-draggedEl/>
             </li>
 
-            <li class="topping-list_topping">
-              <img src="imgs/mushroom.svg" alt="Mushroom" class="topping_topping-img"/>
+            <li class="topping-list_topping" >
+              <img src="imgs/mushroom.svg" alt="Mushroom" class="topping_topping-img" data-draggedEl/>
             </li>
 
-            <li class="topping-list_topping">
-              <img src="imgs/cucumber.svg" alt="Cucumber" class="topping_topping-img"/>
+            <li class="topping-list_topping" >
+              <img src="imgs/cucumber.svg" alt="Cucumber" class="topping_topping-img" data-draggedEl/>
             </li>
 
-            <li class="topping-list_topping">
-              <img src="imgs/bow.svg" alt="Bow" class="topping_topping-img"/>
+            <li class="topping-list_topping" data-draggedEl>
+              <img src="imgs/bow.svg" alt="Bow" class="topping_topping-img" data-draggedEl/>
             </li>
           </ul>
         `;
@@ -297,57 +297,32 @@
           });
         });
 
-        // const toppingImgs = document.querySelectorAll(".topping_topping-img");
+        const toppingsList = document.querySelector(".data_topping-for-pizza");
 
-        // let newX = 0,
-        //   newY = 0,
-        //   startX = 0,
-        //   startY = 0;
+        const initialState = {
+          offsetX: null,
+          offsetY: null,
+          isDragging: false,
+          currentDragEl: null,
+        };
 
-        // toppingImgs.forEach((img) => {
-        //   img.addEventListener("mousebown", mouseDown);
-        // });
+        let newState;
+        const draggingClass = "is-dragging";
 
-          const toppingsList = document.querySelector(
-            ".data_topping-for-pizza"
-          );
+        function resetState() {
+          newState = { ...initialState };
+        }
 
-          let startX = 0,
-            startY = 0,
-            currentImg = null;
+        function onPointerDown(e) {
+          const { target, x, y } = e;
+          const isDraggble = target.matches("[data-draggedEl]");
 
-          toppingsList.addEventListener("pointerdown", mouseDown);
+          if (!isDraggble) return;
 
-          function mouseDown(e) {
-            const target = e.target.closest(".topping_topping-img");
-            if (!target) return;
+          target.classList.add(draggingClass);
 
-            currentImg = target;
-            startX = e.clientX;
-            startY = e.clientY;
-
-            document.addEventListener("pointermove", mouseMove);
-            document.addEventListener("pointerup", mouseUp);
-          }
-
-          function mouseMove(e) {
-            if (!currentImg) return;
-
-            const deltaX = e.clientX - startX;
-            const deltaY = e.clientY - startY;
-
-            startX = e.clientX;
-            startY = e.clientY;
-
-            currentImg.style.top = currentImg.offsetTop + deltaY + "px";
-            currentImg.style.left = currentImg.offsetLeft + deltaX + "px";
-          }
-
-          function mouseUp() {
-            currentImg = null;
-            document.removeEventListener("pointermove", mouseMove);
-            document.removeEventListener("pointerup", mouseUp);
-          }
+          const {left, top} = target.getBoundingClientReact();
+        }
       }
     </script>
   </body>

@@ -328,12 +328,17 @@ main {
 
                   .topping_topping-img {
                     position: absolute;
-                    cursor: grab;
-                    inset: 0;
-                    width: 85%;
-                    aspect-ratio: 1 / 1;
+                    width: 30px;
+                    height: 30px;
                     filter: drop-shadow(0 7px 20px rgba(128, 128, 128, 0.2));
-                    user-select: none;
+                    touch-action: none;
+                    transition: scale 0.2s;
+                    cursor: grab;
+
+                    &.is-dragging {
+                      cursor: grabbing;
+                      scale: 1.05;
+                    }
                   }
                 }
               }

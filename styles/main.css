@@ -400,9 +400,8 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_data .data_topping-for-pizza .topping-for-pizza_topping-list .topping-list_topping .topping_topping-img {
   position: absolute;
-  cursor: -webkit-grab;
-  cursor: grab;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 85%;
   aspect-ratio: 1/1;
   -webkit-filter: drop-shadow(0 7px 20px rgba(128, 128, 128, 0.2));
