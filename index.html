@@ -1,142 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="styles/resetStandartStyle.css" />
-    <title>Order Manually</title>
-  </head>
 
-  <body>
-    <main>
-      <div class="main_main-page">
-        <div class="main-page_top-part">
-          <div class="top-part_text-content">
-            <h2 class="text-content_title">Order Manually</h2>
-            <div class="text-content_subtitle">
-              <img src="imgs/location.png" alt="local icon" />
-              <p>Washington park</p>
-            </div>
-            <p class="text-content_category">Pizza</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/resetStandartStyle.css" />
+  <title>Order Manually</title>
+</head>
+
+<body>
+  <main>
+    <div class="main_main-page">
+      <div class="main-page_top-part">
+        <div class="top-part_text-content">
+          <h2 class="text-content_title">Order Manually</h2>
+          <div class="text-content_subtitle">
+            <img src="imgs/location.png" alt="local icon" />
+            <p>Washington park</p>
           </div>
-
-          <div class="top-part_hidden-block">
-            <img
-              src="imgs/left-arrow.svg"
-              alt="Back to main page"
-              class="hidden-block_btn-nav"
-            />
-            <h2 class="hidden-block_pizza-name"></h2>
-          </div>
-
-          <img
-            src="imgs/cart-for-header.png"
-            alt="cart icon"
-            class="top-part_cart"
-          />
+          <p class="text-content_category">Pizza</p>
         </div>
 
-        <div class="container-swiper">
-          <div class="constiner-swiper_pizza-card"></div>
+        <div class="top-part_hidden-block">
+          <img src="imgs/left-arrow.svg" alt="Back to main page" class="hidden-block_btn-nav" />
+          <h2 class="hidden-block_pizza-name"></h2>
+        </div>
 
-          <div class="swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="imgs/hot-peperoni.webp" />
-              </div>
-              <div class="swiper-slide">
-                <img src="imgs/classic-chese.webp" />
-              </div>
-              <div class="swiper-slide"><img src="imgs/meat-pizza.webp" /></div>
-              <div class="swiper-slide"><img src="imgs/margarita.webp" /></div>
+        <img src="imgs/cart-for-header.png" alt="cart icon" class="top-part_cart" />
+      </div>
+
+      <div class="container-swiper">
+        <div class="constiner-swiper_pizza-card"></div>
+
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="imgs/hot-peperoni.webp" />
             </div>
+            <div class="swiper-slide">
+              <img src="imgs/classic-chese.webp" />
+            </div>
+            <div class="swiper-slide"><img src="imgs/meat-pizza.webp" /></div>
+            <div class="swiper-slide"><img src="imgs/margarita.webp" /></div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script>
-      const productsList = [
-        {
-          name: "Classic Cheese",
-          assessment: 4,
-          price: 10,
-          prodImg: "imgs/classic-chese.webp",
-        },
-        {
-          name: "Margarita",
-          assessment: 5,
-          price: 13,
-          prodImg: "imgs/margarita.webp",
-        },
-        {
-          name: "Hot Peperoni",
-          assessment: 5,
-          price: 15,
-          prodImg: "imgs/hot-peperoni.webp",
-        },
-        {
-          name: "Meat pizza",
-          assessment: 4,
-          price: 13.5,
-          prodImg: "imgs/meat-pizza.webp",
-        },
-      ];
+  <script>
+    const productsList = [
+      {
+        name: "Classic Cheese",
+        assessment: 4,
+        price: 10,
+        prodImg: "imgs/classic-chese.webp",
+      },
+      {
+        name: "Margarita",
+        assessment: 5,
+        price: 13,
+        prodImg: "imgs/margarita.webp",
+      },
+      {
+        name: "Hot Peperoni",
+        assessment: 5,
+        price: 15,
+        prodImg: "imgs/hot-peperoni.webp",
+      },
+      {
+        name: "Meat pizza",
+        assessment: 4,
+        price: 13.5,
+        prodImg: "imgs/meat-pizza.webp",
+      },
+    ];
 
-      const pizzaCard = document.querySelector(".constiner-swiper_pizza-card");
+    const pizzaCard = document.querySelector(".constiner-swiper_pizza-card");
 
-      function getCorrectPrice(pizzaSize, price) {
-        let correctPrice;
+    function getCorrectPrice(pizzaSize, price) {
+      let correctPrice;
 
-        switch (pizzaSize) {
-          case "M":
-            correctPrice = price;
-            break;
-          case "S":
-            correctPrice = price - 2;
-            break;
-          case "L":
-            correctPrice = price + 2;
-            break;
-        }
-        return correctPrice;
+      switch (pizzaSize) {
+        case "M":
+          correctPrice = price;
+          break;
+        case "S":
+          correctPrice = price - 2;
+          break;
+        case "L":
+          correctPrice = price + 2;
+          break;
       }
+      return correctPrice;
+    }
 
-      function filterData(activeSlide) {
-        const activeSlideImg = activeSlide.querySelector("img");
-        const src = activeSlideImg.getAttribute("src");
+    function filterData(activeSlide) {
+      const activeSlideImg = activeSlide.querySelector("img");
+      const src = activeSlideImg.getAttribute("src");
 
-        const dataPizza = productsList.find((prod) => prod.prodImg === src);
-        return dataPizza;
-      }
+      const dataPizza = productsList.find((prod) => prod.prodImg === src);
+      return dataPizza;
+    }
 
-      function addHtmlActiveClass(activeSlide) {
-        const dataPizza = filterData(activeSlide);
-        let pizzaSize = "M";
+    function addHtmlActiveClass(activeSlide) {
+      const dataPizza = filterData(activeSlide);
+      let pizzaSize = "M";
 
-        function generateStars(assessment) {
-          const standartAssess = 5;
-          const starsArray = [];
+      function generateStars(assessment) {
+        const standartAssess = 5;
+        const starsArray = [];
 
-          for (let i = 0; i < assessment; i++) {
-            starsArray.push('<div><img src="imgs/star.svg"/></div>');
-          }
-
-          for (let i = 0; i < standartAssess - assessment; i++) {
-            starsArray.push('<div><img src="imgs/empty-star.svg"/></div>');
-          }
-
-          return starsArray.join("");
+        for (let i = 0; i < assessment; i++) {
+          starsArray.push('<div><img src="imgs/star.svg"/></div>');
         }
 
-        pizzaCard.innerHTML = `
+        for (let i = 0; i < standartAssess - assessment; i++) {
+          starsArray.push('<div><img src="imgs/empty-star.svg"/></div>');
+        }
+
+        return starsArray.join("");
+      }
+
+      pizzaCard.innerHTML = `
     <div class="pizza-card_img-prod">
       <img src="imgs/desk-for-pizza.webp" alt="Pizza desk" class="back-part" />
     </div>
@@ -160,83 +150,85 @@
     </button>
   `;
 
-        const changeSize = pizzaCard.querySelectorAll(".size");
-        changeSize.forEach((btn) => {
-          btn.addEventListener("click", (e) => {
-            pizzaSize = e.target.textContent;
-            const priceElem = pizzaCard.querySelector(".data-pizza_price");
+      const changeSize = pizzaCard.querySelectorAll(".size");
+      changeSize.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          pizzaSize = e.target.textContent;
+          const priceElem = pizzaCard.querySelector(".data-pizza_price");
 
-            priceElem.textContent = `$${getCorrectPrice(
-              pizzaSize,
-              dataPizza.price
-            )}`;
-            changeSize.forEach((btn) => btn.classList.remove("active"));
-            e.target.classList.add("active");
+          priceElem.textContent = `$${getCorrectPrice(
+            pizzaSize,
+            dataPizza.price
+          )}`;
+          changeSize.forEach((btn) => btn.classList.remove("active"));
+          e.target.classList.add("active");
 
-            showHtmlEl();
-          });
+          showHtmlEl();
         });
-      }
-
-      function showHtmlEl() {
-        const nameProd = document.querySelector(".data-pizza_name");
-        const priceProd = document.querySelector(".data-pizza_price");
-
-        if (!nameProd || !priceProd) return;
-
-        nameProd.classList.remove("hidden");
-        priceProd.classList.remove("hidden");
-      }
-
-      const swiper = new Swiper(".swiper", {
-        effect: "creative",
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 3,
-        spaceBetween: 20,
-        creativeEffect: {
-          prev: { translate: ["-95%", 100, 0] },
-          next: { translate: ["95%", 100, 0] },
-        },
-        on: {
-          init() {
-            this.slideTo(1, 0);
-            const activeSlide = this.slides[this.activeIndex];
-            addHtmlActiveClass(activeSlide);
-          },
-        },
       });
+    }
 
-      swiper.on("slideChange", () => {
+    function showHtmlEl() {
+      const nameProd = document.querySelector(".data-pizza_name");
+      const priceProd = document.querySelector(".data-pizza_price");
+
+      if (!nameProd || !priceProd) return;
+
+      nameProd.classList.remove("hidden");
+      priceProd.classList.remove("hidden");
+    }
+
+    const swiper = new Swiper(".swiper", {
+      effect: "creative",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 3,
+      spaceBetween: 20,
+      creativeEffect: {
+        prev: { translate: ["-95%", 100, 0] },
+        next: { translate: ["95%", 100, 0] },
+      },
+      on: {
+        init() {
+          this.slideTo(1, 0);
+          const activeSlide = this.slides[this.activeIndex];
+          addHtmlActiveClass(activeSlide);
+        },
+      },
+    });
+
+    swiper.on("slideChange", () => {
+      const activeSlide = swiper.slides[swiper.activeIndex];
+      addHtmlActiveClass(activeSlide);
+    });
+
+    const swiperSlide = document.querySelectorAll(".swiper-slide");
+    swiperSlide.forEach((slide) => {
+      slide.addEventListener("click", () => {
         const activeSlide = swiper.slides[swiper.activeIndex];
-        addHtmlActiveClass(activeSlide);
+        addHtmlForProdPage(activeSlide);
       });
+    });
 
-      const swiperSlide = document.querySelectorAll(".swiper-slide");
-      swiperSlide.forEach((slide) => {
-        slide.addEventListener("click", () => {
-          const activeSlide = swiper.slides[swiper.activeIndex];
-          addHtmlForProdPage(activeSlide);
-        });
-      });
+    function addHtmlForProdPage(activeSlide) {
+      const dataPizza = filterData(activeSlide);
+      const topPart = document.querySelector(".main-page_top-part");
+      const imgProd = document.querySelector(".pizza-card_img-prod");
 
-      function addHtmlForProdPage(activeSlide) {
-        const dataPizza = filterData(activeSlide);
-        const topPart = document.querySelector(".main-page_top-part");
-        const imgProd = document.querySelector(".pizza-card_img-prod");
+      const swiper = document.querySelector(".swiper");
+      swiper.classList.add("hidden");
 
-        const swiper = document.querySelector(".swiper");
-        swiper.classList.add("hidden");
+      const titleHiddenBlock = document.querySelector(
+        ".hidden-block_pizza-name"
+      );
+      titleHiddenBlock.textContent = dataPizza.name;
+      topPart.classList.add("change-for-prodPage");
 
-        const titleHiddenBlock = document.querySelector(
-          ".hidden-block_pizza-name"
-        );
-        titleHiddenBlock.textContent = dataPizza.name;
-        topPart.classList.add("change-for-prodPage");
+      imgProd.innerHTML += `<img src="${dataPizza.prodImg}" class="pizza-photo" alt="Pizza photo" />
+      
+      `;
 
-        imgProd.innerHTML += `<img src="${dataPizza.prodImg}" class="pizza-photo" alt="Pizza photo" />`;
-
-        const HTMLtoppingForPizza = `
+      const HTMLtoppingForPizza = `
           <p class="topping-for-pizza_hint-message">Topping (Must be 2)</p>
 
           <ul class="topping-for-pizza_topping-list">
@@ -252,78 +244,147 @@
               <img src="imgs/cucumber.svg" alt="Cucumber" class="topping_topping-img" data-draggedEl/>
             </li>
 
-            <li class="topping-list_topping" data-draggedEl>
+            <li class="topping-list_topping">
               <img src="imgs/bow.svg" alt="Bow" class="topping_topping-img" data-draggedEl/>
             </li>
           </ul>
         `;
 
-        const toppingDiv = document.createElement("div");
-        toppingDiv.className = "data_topping-for-pizza";
-        toppingDiv.innerHTML = HTMLtoppingForPizza;
+      const toppingDiv = document.createElement("div");
+      toppingDiv.className = "data_topping-for-pizza";
+      toppingDiv.innerHTML = HTMLtoppingForPizza;
 
-        const pizzaCardData = pizzaCard.querySelector(".pizza-card_data");
-        pizzaCard.classList.add("version-for-pageProd");
-        pizzaCardData.appendChild(toppingDiv);
+      const pizzaCardData = pizzaCard.querySelector(".pizza-card_data");
+      pizzaCard.classList.add("version-for-pageProd");
+      pizzaCardData.appendChild(toppingDiv);
 
-        const btn_nav = document.querySelector(".hidden-block_btn-nav");
-        btn_nav.addEventListener("click", () => {
-          pizzaCard.classList.remove("version-for-pageProd");
-          swiper.classList.remove("hidden");
+      const btn_nav = document.querySelector(".hidden-block_btn-nav");
+      btn_nav.addEventListener("click", () => {
+        pizzaCard.classList.remove("version-for-pageProd");
+        swiper.classList.remove("hidden");
 
-          const pizzaImg = imgProd.querySelector(".pizza-photo");
-          imgProd.removeChild(pizzaImg);
-          pizzaCardData.removeChild(toppingDiv);
+        const pizzaImg = imgProd.querySelector(".pizza-photo");
+        imgProd.removeChild(pizzaImg);
+        pizzaCardData.removeChild(toppingDiv);
 
-          topPart.classList.remove("change-for-prodPage");
+        topPart.classList.remove("change-for-prodPage");
 
-          document.body.classList.add("style-for-prodPage");
+        document.body.classList.add("style-for-prodPage");
+      });
+
+      const changeSize = pizzaCard.querySelectorAll(".size");
+      changeSize.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          pizzaSize = e.target.textContent;
+          const priceElem = pizzaCard.querySelector(".data-pizza_price");
+
+          priceElem.textContent = `$${getCorrectPrice(
+            pizzaSize,
+            dataPizza.price
+          )}`;
+          changeSize.forEach((btn) => btn.classList.remove("active"));
+          e.target.classList.add("active");
+
+          showHtmlEl();
         });
+      });
 
-        const changeSize = pizzaCard.querySelectorAll(".size");
-        changeSize.forEach((btn) => {
-          btn.addEventListener("click", (e) => {
-            pizzaSize = e.target.textContent;
-            const priceElem = pizzaCard.querySelector(".data-pizza_price");
 
-            priceElem.textContent = `$${getCorrectPrice(
-              pizzaSize,
-              dataPizza.price
-            )}`;
-            changeSize.forEach((btn) => btn.classList.remove("active"));
-            e.target.classList.add("active");
+      const toppingsList = document.querySelector(".data_topping-for-pizza");
+      const pizzaImg = document.querySelector(".pizza-card_img-prod");
+      const coordinat = pizzaImg.getBoundingClientRect();
+      const { left, top } = coordinat;
 
-            showHtmlEl();
-          });
-        });
+      const initialState = {
+        offsetX: null,
+        offsetY: null,
+        isDragging: false,
+        currentDragEl: null,
+      };
 
-        const toppingsList = document.querySelector(".data_topping-for-pizza");
+      let newState = { ...initialState };
+      const draggingClass = "is-dragging";
 
-        const initialState = {
-          offsetX: null,
-          offsetY: null,
-          isDragging: false,
-          currentDragEl: null,
+      function resetState() {
+        newState = { ...initialState };
+      };
+
+      function onPointerDown(e) {
+        const { target, x, y } = e;
+        const isDraggble = target.matches("[data-draggedEl]");
+
+        if (!isDraggble) return;
+
+        target.classList.add(draggingClass);
+
+        const { left, top } = target.getBoundingClientRect();
+
+        newState = {
+          offsetX: x - left,
+          offsetY: y - top,
+          isDragging: true,
+          currentDragEl: target,
         };
+      };
 
-        let newState;
-        const draggingClass = "is-dragging";
+      function onPointerMove(e) {
+        if (!newState.isDragging) return;
 
-        function resetState() {
-          newState = { ...initialState };
+        const x = e.pageX - newState.offsetX;
+        const y = e.pageY - newState.offsetY;
+
+        newState.currentDragEl.style.left = `${x}px`;
+        newState.currentDragEl.style.top = `${y}px`;
+      };
+
+      function onPointerUp(e) {
+        const { target } = e;
+        if (!newState.isDragging) return;
+
+        newState.currentDragEl.classList.remove(draggingClass);
+
+        if (isOverlap(pizzaImg, target)) {
+          const src = target.getAttribute("src");
+
+          const htmlAnimationBlock = `<div class="animation-block"></div>`;
+          pizzaImg.innerHTML += htmlAnimationBlock;
+          const toppings = `
+            <ul class="animation-block_list-topping">
+              <img src="${src}" class="one el-animation" alt="topping img" />
+        <img src="${src}" class="two el-animation" alt="topping img" />
+        <img src="${src}" class="three el-animation" alt="topping img" />
+        <img src="${src}" class="four el-animation" alt="topping img" />
+        <img src="${src}" class="five el-animation" alt="topping img" />
+        <img src="${src}" class="six el-animation" alt="topping img" />
+            </ul>
+          `;
+          const animationBlock = document.querySelector(".animation-block");
+          animationBlock.innerHTML += toppings;
+
+          newState.currentDragEl.style.position = 'relative';
+          newState.currentDragEl.style.top = 0;
+          newState.currentDragEl.style.left = 0;
         }
+        resetState();
+      };
 
-        function onPointerDown(e) {
-          const { target, x, y } = e;
-          const isDraggble = target.matches("[data-draggedEl]");
+      function isOverlap(a, b) {
+        const r1 = a.getBoundingClientRect();
+        const r2 = b.getBoundingClientRect();
 
-          if (!isDraggble) return;
-
-          target.classList.add(draggingClass);
-
-          const {left, top} = target.getBoundingClientReact();
-        }
+        return !(
+          r1.right < r2.left ||
+          r1.left > r2.right ||
+          r1.bottom < r2.top ||
+          r1.top > r2.bottom
+        );
       }
-    </script>
-  </body>
+
+      document.addEventListener("pointerdown", (e) => onPointerDown(e));
+      document.addEventListener("pointermove", (e) => onPointerMove(e));
+      document.addEventListener("pointerup", (e) => onPointerUp(e));
+    }
+  </script>
+</body>
+
 </html>
