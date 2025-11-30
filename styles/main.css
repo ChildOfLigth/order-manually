@@ -340,36 +340,48 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-
   width: 60%;
   height: 70%;
   margin: 0 auto;
-}
-main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_img-prod .animation-block .animation-block_list-topping {
   -webkit-perspective: 800px;
           perspective: 800px;
   z-index: 100;
-  width: 100%;
-  height: 100%;
-  position: relative;
 }
-main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_img-prod .animation-block .animation-block_list-topping .el-animation {
-  width: 17%;
+main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_img-prod .animation-block .el-animation {
+  width: 18%;
   aspect-ratio: 1/1;
   position: relative;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  opacity: 1;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
   -webkit-filter: drop-shadow(-4px 5px 3px rgba(98, 40, 25, 0.8));
           filter: drop-shadow(-4px 5px 3px rgba(98, 40, 25, 0.8));
 }
-main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_img-prod .animation-block .animation-block_list-topping .el-animation.animate {
-  -webkit-animation: dropTopping 0.5s;
-          animation: dropTopping 0.5s;
+main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_img-prod .animation-block .el-animation.animate {
+  -webkit-animation: dropTopping 0.6s;
+          animation: dropTopping 0.6s;
+}
+main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_img-prod .animation-block .el-animation.two.animate {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_img-prod .animation-block .el-animation.three {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_img-prod .animation-block .el-animation.four {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_img-prod .animation-block .el-animation.five {
+  -webkit-animation-delay: 0.55s;
+          animation-delay: 0.55s;
+}
+main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_img-prod .animation-block .el-animation.six {
+  -webkit-animation-delay: 0.38s;
+          animation-delay: 0.38s;
 }
 @-webkit-keyframes dropTopping {
   0% {
     opacity: 0;
-    -webkit-transform: translateZ(350px);
-            transform: translateZ(350px);
+    -webkit-transform: translateZ(400px);
+            transform: translateZ(400px);
   }
   100% {
     opacity: 1;
@@ -380,8 +392,8 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-
 @keyframes dropTopping {
   0% {
     opacity: 0;
-    -webkit-transform: translateZ(350px);
-            transform: translateZ(350px);
+    -webkit-transform: translateZ(400px);
+            transform: translateZ(400px);
   }
   100% {
     opacity: 1;

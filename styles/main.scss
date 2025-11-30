@@ -285,42 +285,50 @@ main {
               width: 60%;
               height: 70%;
               margin: 0 auto;
+              perspective: 800px;
+              z-index: 100;
 
-              .animation-block_list-topping {
-                perspective: 800px;
-                z-index: 100;
-                width: 100%;
-                height: 100%;
+              .el-animation {
+                width: 18%;
+                aspect-ratio: 1 / 1;
                 position: relative;
+                transition: all 0.5s;
+                filter: drop-shadow(-4px 5px 3px rgba(98, 40, 25, 0.8));
 
-                .el-animation {
-                  width: 17%;
-                  aspect-ratio: 1 / 1;
-                  position: relative;
-                  transition: all 0.5s;
-                  opacity: 1;
-                  transform: translateZ(0);
-                  filter: drop-shadow(-4px 5px 3px rgba(98, 40, 25, 0.8));
+                &.animate {
+                  animation: dropTopping 0.6s;
+                }
 
+                &.two {
                   &.animate {
-                    animation: dropTopping 0.5s;
+                    animation-delay: 0.2s;
+                  }
+                }
+                &.three {
+                  animation-delay: 0.4s;
+                }
+                &.four {
+                  animation-delay: 0.5s;
+                }
+                &.five {
+                  animation-delay: 0.55s;
+                }
+                &.six {
+                  animation-delay: 0.38s;
+                }
+
+                @keyframes dropTopping {
+                  0% {
+                    opacity: 0;
+                    transform: translateZ(400px);
                   }
 
-                  @keyframes dropTopping {
-                    0% {
-                      opacity: 0;
-                      transform: translateZ(350px);
-                    }
-
-                    100% {
-                      opacity: 1;
-                      transform: translateZ(0);
-                    }
+                  100% {
+                    opacity: 1;
+                    transform: translateZ(0);
                   }
                 }
               }
-
-
             }
           }
 
