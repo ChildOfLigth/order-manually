@@ -348,14 +348,13 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-
   width: 18%;
   aspect-ratio: 1/1;
   position: relative;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  opacity: 0;
   -webkit-filter: drop-shadow(-4px 5px 3px rgba(98, 40, 25, 0.8));
           filter: drop-shadow(-4px 5px 3px rgba(98, 40, 25, 0.8));
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_img-prod .animation-block .el-animation.animate {
-  -webkit-animation: dropTopping 0.6s;
-          animation: dropTopping 0.6s;
+  -webkit-animation: dropTopping 0.6s forwards;
+          animation: dropTopping 0.6s forwards;
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_img-prod .animation-block .el-animation.two.animate {
   -webkit-animation-delay: 0.2s;
@@ -380,8 +379,8 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-
 @-webkit-keyframes dropTopping {
   0% {
     opacity: 0;
-    -webkit-transform: translateZ(400px);
-            transform: translateZ(400px);
+    -webkit-transform: translateZ(500px);
+            transform: translateZ(500px);
   }
   100% {
     opacity: 1;
@@ -392,8 +391,8 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-
 @keyframes dropTopping {
   0% {
     opacity: 0;
-    -webkit-transform: translateZ(400px);
-            transform: translateZ(400px);
+    -webkit-transform: translateZ(500px);
+            transform: translateZ(500px);
   }
   100% {
     opacity: 1;
@@ -489,11 +488,11 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-
   top: 95%;
 }
 main .main_main-page .container-swiper .swiper {
-  width: 100% !important;
   overflow: visible;
   position: relative;
   top: -20%;
   z-index: 5;
+  max-width: 400px !important;
 }
 main .main_main-page .container-swiper .swiper.hidden {
   display: none;
@@ -501,10 +500,9 @@ main .main_main-page .container-swiper .swiper.hidden {
 main .main_main-page .container-swiper .swiper .swiper-wrapper {
   margin: 0 auto !important;
   position: relative;
-  -webkit-transform: translateX(19.3%) translateY(-5%) !important;
-          transform: translateX(19.3%) translateY(-5%) !important;
 }
 main .main_main-page .container-swiper .swiper .swiper-wrapper .swiper-slide {
+  position: relative;
   width: 120px !important;
   aspect-ratio: 1/1;
   opacity: 0 !important;

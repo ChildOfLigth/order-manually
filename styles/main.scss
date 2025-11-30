@@ -292,11 +292,11 @@ main {
                 width: 18%;
                 aspect-ratio: 1 / 1;
                 position: relative;
-                transition: all 0.5s;
+                opacity: 0;
                 filter: drop-shadow(-4px 5px 3px rgba(98, 40, 25, 0.8));
 
                 &.animate {
-                  animation: dropTopping 0.6s;
+                  animation: dropTopping 0.6s forwards;
                 }
 
                 &.two {
@@ -304,15 +304,19 @@ main {
                     animation-delay: 0.2s;
                   }
                 }
+
                 &.three {
                   animation-delay: 0.4s;
                 }
+
                 &.four {
                   animation-delay: 0.5s;
                 }
+
                 &.five {
                   animation-delay: 0.55s;
                 }
+
                 &.six {
                   animation-delay: 0.38s;
                 }
@@ -320,7 +324,7 @@ main {
                 @keyframes dropTopping {
                   0% {
                     opacity: 0;
-                    transform: translateZ(400px);
+                    transform: translateZ(500px);
                   }
 
                   100% {
@@ -406,11 +410,11 @@ main {
       }
 
       .swiper {
-        width: 100% !important;
         overflow: visible;
         position: relative;
         top: -20%;
         z-index: 5;
+        max-width: 400px !important;
 
         &.hidden {
           display: none;
@@ -419,9 +423,9 @@ main {
         .swiper-wrapper {
           margin: 0 auto !important;
           position: relative;
-          transform: translateX(19.3%) translateY(-5%) !important;
 
           .swiper-slide {
+            position: relative;
             width: 120px !important;
             aspect-ratio: 1 / 1;
             opacity: 0 !important;
