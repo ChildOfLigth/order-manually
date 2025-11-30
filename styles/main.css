@@ -91,35 +91,26 @@ main .main_main-page .main-page_top-part .top-part_text-content .text-content_ca
   background-color: #ffd285;
   border-radius: 40px;
 }
-main .main_main-page .main-page_top-part .top-part_hidden-block {
+main .main_main-page .main-page_top-part .top-part_btn-nav {
+  display: none;
+}
+main .main_main-page .main-page_top-part .top-part_pizza-name {
   display: none;
 }
 main .main_main-page .main-page_top-part .top-part_cart {
   width: 30px;
   height: 30px;
 }
-main .main_main-page .main-page_top-part .top-part_hidden-block {
-  display: none;
-}
 main .main_main-page .main-page_top-part.change-for-prodPage .top-part_text-content {
   display: none;
 }
-main .main_main-page .main-page_top-part.change-for-prodPage .top-part_hidden-block {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-main .main_main-page .main-page_top-part.change-for-prodPage .top-part_hidden-block .hidden-block_btn-nav {
+main .main_main-page .main-page_top-part.change-for-prodPage .top-part_btn-nav {
+  display: block;
   width: 30px;
   height: 30px;
 }
-main .main_main-page .main-page_top-part.change-for-prodPage .top-part_hidden-block .hidden-block_pizza-name {
+main .main_main-page .main-page_top-part.change-for-prodPage .top-part_pizza-name {
+  display: inline-block;
   font-size: 25px;
   color: #622819;
 }
@@ -321,6 +312,8 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-
   width: 100%;
   padding: 30px 0;
   background-color: #f9f5f2;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_img-prod {
   width: 90%;
@@ -402,8 +395,6 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_data {
   width: 100%;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
   background: none;
 }
 main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd .pizza-card_data .data-pizza_name {
