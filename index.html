@@ -353,57 +353,57 @@
           newState = { ...initialState };
         }
 
-        function onPointerDown(e) {
-          const { target, x, y } = e;
-          const isDraggble = target.matches("[data-draggedEl]");
+              function onPointerDown(e) {
+        const { target, clientX, clientY } = e;
+        const isDraggble = target.matches("[data-draggedEl]");
 
-          if (!isDraggble) return;
+        if (!isDraggble) return;
 
-          target.classList.add(draggingClass);
+        target.classList.add(draggingClass);
 
-          const { left, top } = target.getBoundingClientRect();
+        const { left, top } = target.getBoundingClientRect();
 
-          newState = {
-            offsetX: x - left,
-            offsetY: y - top,
-            isDragging: true,
-            currentDragEl: target,
-          };
-        }
+        newState = {
+          offsetX: clientX - left,
+          offsetY: clientY - top,
+          isDragging: true,
+          currentDragEl: target,
+        };
+      }
 
-        function onPointerMove(e) {
-          if (!newState.isDragging) return;
+      function onPointerMove(e) {
+        if (!newState.isDragging) return;
 
-          const x = e.pageX - newState.offsetX;
-          const y = e.pageY - newState.offsetY;
+        const x = e.clientX - newState.offsetX;
+        const y = e.clientY - newState.offsetY;
 
-          newState.currentDragEl.style.left = `${x}px`;
-          newState.currentDragEl.style.top = `${y}px`;
-        }
+        newState.currentDragEl.style.left = `${x}px`;
+        newState.currentDragEl.style.top = `${y}px`;
+      }
 
-        function generateCoordinat(quntityCoord) {
-          let currentPosVar = Math.floor(Math.random() * quntityCoord);
-          const positions = filteredArr[currentPosVar];
-          filteredArr.splice(currentPosVar, 1);
+      function generateCoordinat(quntityCoord) {
+        let currentPosVar = Math.floor(Math.random() * quntityCoord);
+        const positions = filteredArr[currentPosVar];
+        filteredArr.splice(currentPosVar, 1);
 
-          return positions;
-        }
+        return positions;
+      }
 
-        function onPointerUp(e) {
-          if (!newState.isDragging) return;
+      function onPointerUp(e) {
+        if (!newState.isDragging) return;
 
-          const { target } = e;
-          const positions = generateCoordinat(filteredArr.length);
+        const { target } = e;
+        const positions = generateCoordinat(filteredArr.length);
 
-          newState.currentDragEl.classList.remove(draggingClass);
+        newState.currentDragEl.classList.remove(draggingClass);
 
-          if (isOverlap(pizzaImg, target)) {
-            const src = target.getAttribute("src");
+        if (isOverlap(pizzaImg, target)) {
+          const src = target.getAttribute("src");
 
-            const animationBlock = document.createElement("div");
-            animationBlock.className = "animation-block";
+          const animationBlock = document.createElement("div");
+          animationBlock.className = "animation-block";
 
-            const toppings = `
+          const toppings = `
       <img src="${src}" class="one el-animation" alt="topping img" />
       <img src="${src}" class="two el-animation" alt="topping img" />
       <img src="${src}" class="three el-animation" alt="topping img" />
@@ -411,33 +411,33 @@
       <img src="${src}" class="five el-animation" alt="topping img" />
       <img src="${src}" class="six el-animation" alt="topping img" />
         `;
-            animationBlock.innerHTML = toppings;
-            target.style.pointerEvents = "none";
-            target.style.userSelect = "none";
+          animationBlock.innerHTML = toppings;
+          target.style.pointerEvents = "none";
+          target.style.userSelect = "none";
 
-            pizzaImg.appendChild(animationBlock);
+          pizzaImg.appendChild(animationBlock);
 
-            newState.currentDragEl.style.position = "relative";
-            newState.currentDragEl.style.top = 0;
-            newState.currentDragEl.style.left = 0;
+          newState.currentDragEl.style.position = "relative";
+          newState.currentDragEl.style.top = 0;
+          newState.currentDragEl.style.left = 0;
 
-            const toppingImgs =
-              animationBlock.querySelectorAll(".el-animation");
-            toppingImgs.forEach((topping, i) => {
-              topping.style.top = `${positions[i].top}%`;
-              topping.style.left = `${positions[i].left}%`;
+          const toppingImgs =
+            animationBlock.querySelectorAll(".el-animation");
+          toppingImgs.forEach((topping, i) => {
+            topping.style.top = `${positions[i].top}%`;
+            topping.style.left = `${positions[i].left}%`;
 
-              setTimeout(() => topping.classList.add("animate"), 10);
-              setTimeout(() => {
-                topping.classList.remove("animate");
-                topping.style.opacity = "1";
-              }, 1000);
-            });
-          }
-
-          resetState();
+            setTimeout(() => topping.classList.add("animate"), 10);
+            setTimeout(() => {
+              topping.classList.remove("animate");
+              topping.style.opacity = "1";
+            }, 1000);
+          });
         }
 
+        resetState();
+      }
+        
         function isOverlap(a, b) {
           const r1 = a.getBoundingClientRect();
           const r2 = b.getBoundingClientRect();
