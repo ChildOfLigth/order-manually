@@ -508,6 +508,12 @@ main .main_main-page .container-swiper .swiper .swiper-wrapper .swiper-slide.swi
   aspect-ratio: 1/1;
   opacity: 1 !important;
 }
+main .main_main-page . container-swiper .swiper .swiper-wrapper .swiper-slide.swiper-slide-prev {
+  transform: translateX(-15%);
+}
+main .main_main-page . container-swiper .swiper .swiper-wrapper .swiper-slide.swiper-slide-prev {
+  transform: translateX(15%);
+}
 main .main_main-page .container-swiper .swiper .swiper-wrapper .swiper-slide.swiper-slide-prev, main .main_main-page .container-swiper .swiper .swiper-wrapper .swiper-slide.swiper-slide-next {
   opacity: 1 !important;
 }
