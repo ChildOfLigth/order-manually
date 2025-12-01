@@ -186,36 +186,40 @@
         priceProd.classList.remove("hidden");
       }
 
-      const swiper = new Swiper(".swiper", {
-        effect: "creative",
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 3,
-        creativeEffect: {
-          prev: { translate: ["-95%", 100, 0] },
-          next: { translate: ["95%", 100, 0] },
-        },
-        on: {
-          init() {
-            this.slideTo(1, 0);
-            const activeSlide = this.slides[this.activeIndex];
-            addHtmlActiveClass(activeSlide);
+      window.onload = () => {
+        const swiper = new Swiper(".swiper", {
+          effect: "creative",
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: "auto",
+
+          creativeEffect: {
+            prev: { translate: ["-88%", 70, 0], scale: 0.6 },
+            next: { translate: ["88%", 70, 0], scale: 0.6 },
           },
-        },
-      });
 
-      swiper.on("slideChange", () => {
-        const activeSlide = swiper.slides[swiper.activeIndex];
-        addHtmlActiveClass(activeSlide);
-      });
-
-      const swiperSlide = document.querySelectorAll(".swiper-slide");
-      swiperSlide.forEach((slide) => {
-        slide.addEventListener("click", () => {
-          const activeSlide = swiper.slides[swiper.activeIndex];
-          addHtmlForProdPage(activeSlide);
+          on: {
+            init() {
+              this.slideTo(1, 0);
+              const activeSlide = this.slides[this.activeIndex];
+              addHtmlActiveClass(activeSlide);
+            },
+          },
         });
-      });
+
+        swiper.on("slideChange", () => {
+          const activeSlide = swiper.slides[swiper.activeIndex];
+          addHtmlActiveClass(activeSlide);
+        });
+
+        const swiperSlide = document.querySelectorAll(".swiper-slide");
+        swiperSlide.forEach((slide) => {
+          slide.addEventListener("click", () => {
+            const activeSlide = swiper.slides[swiper.activeIndex];
+            addHtmlForProdPage(activeSlide);
+          });
+        });
+      };
 
       function addHtmlForProdPage(activeSlide) {
         const dataPizza = filterData(activeSlide);
