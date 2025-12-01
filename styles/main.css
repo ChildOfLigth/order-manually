@@ -312,7 +312,7 @@ main .main_main-page .container-swiper .constiner-swiper_pizza-card .pizza-card_
 main .main_main-page .container-swiper .constiner-swiper_pizza-card.version-for-pageProd {
   width: 100%;
   padding: 30px 0;
-  background-color: #f9f5f2;
+  background: linear-gradient(#f1eaeb 2%, #f9f5f2 90%);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -496,7 +496,7 @@ main .main_main-page .container-swiper .swiper .swiper-wrapper {
           align-items: center;
 }
 main .main_main-page .container-swiper .swiper .swiper-slide {
-  width: 63%;
+  width: 66%;
   aspect-ratio: 1/1;
   opacity: 0 !important;
   -webkit-transition: opacity 0.35s ease, -webkit-transform 0.35s ease;
